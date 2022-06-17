@@ -4,7 +4,7 @@
         <div class="container">
             <div class="content" v-for="entry of content.structure" v-bind:key="entry.id">
                 <span v-if="entry.type == 'text'">{{ entry.content }}</span>
-                <img :src="'/content/' + entry.content" v-if="entry.type == 'image' || entry.type == 'gif'" />
+                <img :src="imgSrc(entry.content)" v-if="entry.type == 'image' || entry.type == 'gif'" />
             </div>
         </div>
     </div>
@@ -12,6 +12,11 @@
 
 <script>
 export default {
+    methods: {
+        imgSrc(name) {
+            return new URL(`../assets/content/${name}`, import.meta.url).href;
+        },
+    },
     props: {
         content: Object,
     },

@@ -66,7 +66,7 @@ export default {};
 }
 
 .swamp {
-    background: rgba(0, 0, 0, 0.7) url('../assets/swamp.png');
+    background: rgba(0, 0, 0, 0.7) url('../assets/levels/swamp.png');
 }
 
 .element {
