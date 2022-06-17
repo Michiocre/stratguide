@@ -26,7 +26,6 @@ export default {
     methods: {
         async updateText() {
             let time = await this.$refs[this.content.id]?.player.getCurrentTime();
-            console.log(time);
             let timeStamp = null;
             if (time) {
                 for (const entry of this.content.timeStamps) {

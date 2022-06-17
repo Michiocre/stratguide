@@ -2,7 +2,7 @@
     <main>
         <h1 class="pageHeading">Techniques by Level</h1>
         <div class="container">
-            <RouterLink to="/levels/swamp" class="element">
+            <RouterLink to="/levels/swamp" class="element swamp">
                 <h1 class="linkText">Swamp</h1>
             </RouterLink>
             <RouterLink to="/levels/hijack" class="element">
@@ -64,8 +64,12 @@ export default {};
     justify-items: center;
     padding: 0 0.5rem;
 }
-.element {
+
+.swamp {
     background: rgba(0, 0, 0, 0.7) url('swamp.png');
+}
+
+.element {
     background-size: cover;
     background-position: center;
     background-blend-mode: darken;
