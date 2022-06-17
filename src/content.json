@@ -1,0 +1,51 @@
+{
+    "levels": {
+        "basics": {
+            "id": "basics",
+            "name": "Basic",
+            "description": "Here is a list of the most common movement techniques.",
+            "moves": {
+                "doubleJump": {
+                    "id": "doubleJump",
+                    "name": "Double Jump",
+                    "structure": [
+                        { "type": "text", "content": "By pressing the jump button twice you can perform a double jump." },
+                        { "type": "image", "content": "doubleJump.png" },
+                        { "type": "gif", "content": "shrek.gif" },
+                        { "type": "text", "content": "Depending on the timing of the second jump you can gain varying amount of height." }
+                    ]
+                }
+            }
+        },
+        "swamp": {
+            "id": "swamp",
+            "name": "Swamp",
+            "moves": {
+                "doubleJump": {
+                    "id": "doubleJump",
+                    "name": "Not Doule Jump",
+                    "structure": [
+                        { "type": "text", "content": "By pressing the jump button twice you can perform a double jump." },
+                        { "type": "image", "content": "doubleJump.png" },
+                        { "type": "text", "content": "" },
+                        { "type": "text", "content": "Depending on the timing of the second jump you can gain varying amount of height." }
+                    ]
+                }
+            }
+        }
+    },
+    "runs": [
+        {
+            "id": "run1",
+            "url": "https://www.youtube.com/watch?v=GOuCU6N34XU",
+            "description": "Any% by Michiocre (21:53.647)",
+            "timeStamps": [{ "time": 4, "link": { "url": "#Test", "text": "Link" }, "text": "This is a test" }]
+        },
+        {
+            "id": "run2",
+            "url": "https://www.youtube.com/watch?v=NUT1oL2KFww",
+            "description": "Any% by Master64 (17:59)",
+            "timeStamps": [{ "time": 4, "link": null, "text": "" }]
+        }
+    ]
+}
