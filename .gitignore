@@ -27,5 +27,5 @@ coverage
 *.sln
 *.sw?
 
-/src/assets/content/*
-/src/assets/levels/*
+_content
+_levels

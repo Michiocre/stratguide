@@ -1,9 +1,6 @@
 const { compress } = require('compress-images/promise');
 
-const input = './src/assets/levels/*.{jpg,JPG,jpeg,JPEG,png}';
-const output = './docs/assets/levels/';
-
-async function processImages() {
+async function processImages(input, output) {
     const result = await compress({
         source: input,
         destination: output,
@@ -18,6 +15,11 @@ async function processImages() {
     // errors - all errros happened list
 };
 
-processImages().then((val) => {
+processImages('./largeImages/_levels/*.{jpg,JPG,jpeg,JPEG,png}', './src/assets/levels/').then((val) => {
+    return val;
+});
+
+
+processImages('./largeImages/_content/*.{jpg,JPG,jpeg,JPEG,png}', './src/assets/content/').then((val) => {
     return val;
 });

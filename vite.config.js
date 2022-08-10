@@ -15,6 +15,7 @@ export default defineConfig({
     build: {
         outDir: './docs',
         rollupOptions: {
+            external: ['/src/assets/_content'],
             output: {
                 chunkFileNames: 'assets/js/[name]-[hash].js',
                 entryFileNames: 'assets/js/[name]-[hash].js',
