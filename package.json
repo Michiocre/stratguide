@@ -9,6 +9,7 @@
         "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
     },
     "dependencies": {
+        "gifsicle": "^5.2.1",
         "pngquant-bin": "^6.0.1",
         "seedrandom": "^3.0.5",
         "vue": "^3.2.36",

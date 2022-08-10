@@ -7,6 +7,7 @@ async function processImages(input, output) {
         enginesSetup: {
             jpg: { engine: 'mozjpeg', command: ['-quality', '60']},
             png: { engine: 'pngquant', command: ['--quality=20-50', '-o']},
+            gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] },
         }
     });
 
@@ -15,11 +16,11 @@ async function processImages(input, output) {
     // errors - all errros happened list
 };
 
-processImages('./largeImages/_levels/*.{jpg,JPG,jpeg,JPEG,png}', './src/assets/levels/').then((val) => {
+processImages('./largeImages/_levels/*.{jpg,JPG,jpeg,JPEG,png,gif,GIF}', './src/assets/levels/').then((val) => {
     return val;
 });
 
 
-processImages('./largeImages/_content/*.{jpg,JPG,jpeg,JPEG,png}', './src/assets/content/').then((val) => {
+processImages('./largeImages/_content/*.{jpg,JPG,jpeg,JPEG,png,gif,GIF}', './src/assets/content/').then((val) => {
     return val;
 });
