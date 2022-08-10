@@ -1,45 +1,149 @@
 {
-    "levels": {
-        "basics": {
-            "id": "basics",
-            "name": "Basic",
-            "description": "Here is a list of the most common movement techniques.",
-            "moves": {
-                "doubleJump": {
-                    "id": "doubleJump",
-                    "name": "Double Jump",
-                    "structure": [
-                        { "type": "text", "content": "By pressing the jump button twice you can perform a double jump." },
-                        { "type": "image", "content": "doubleJump.png" },
-                        { "type": "gif", "content": "shrek.gif" },
-                        { "type": "text", "content": "Depending on the timing of the second jump you can gain varying amount of height." }
-                    ]
-                }
+    "basics": {
+        "id": "basics",
+        "name": "Basics",
+        "description": "Here is a list of the most common movement techniques.",
+        "moves": [
+            {
+                "id": "test",
+                "name": "This is a test",
+                "structure": [
+                    {
+                        "type": "text",
+                        "content": "Here is some Text it can be as long as you want."
+                    },
+                    { "type": "image", "content": "content/doubleJump.png" },
+                    { "type": "gif", "content": "content/shrek.gif" },
+                    {
+                        "type": "text",
+                        "content": "I also added a gif and some images just to see if they work."
+                    }
+                ]
             }
-        },
-        "swamp": {
+        ]
+    },
+    "levels": [
+        {
             "id": "swamp",
             "name": "Swamp",
-            "moves": {
-                "doubleJump": {
-                    "id": "doubleJump",
-                    "name": "Not Doule Jump",
+            "image": "levels/swamp.png",
+            "moves": [
+                {
+                    "id": "testSwamp",
+                    "name": "This is a test thing for swamp",
                     "structure": [
-                        { "type": "text", "content": "By pressing the jump button twice you can perform a double jump." },
-                        { "type": "image", "content": "doubleJump.png" },
+                        {
+                            "type": "text",
+                            "content": "By pressing the jump button twice you can perform a double jump."
+                        },
+                        { "type": "image", "content": "content/doubleJump.png" },
                         { "type": "text", "content": "" },
-                        { "type": "text", "content": "Depending on the timing of the second jump you can gain varying amount of height." }
+                        {
+                            "type": "text",
+                            "content": "Depending on the timing of the second jump you can gain varying amount of height."
+                        }
                     ]
                 }
-            }
+            ]
+        },
+        {
+            "id": "hijack",
+            "name": "Hijack",
+            "image": "levels/hijack.png",
+            "moves": [
+                {
+                    "id": "hijackSkip",
+                    "name": "Hijack Skip",
+                    "structure": [
+                        {
+                            "type": "text",
+                            "content": "Triple jump up the lamp post, then turn and double jump towards the front of the carriage."
+                        },
+                        {"type": "gif",  "content": "content/hijackSkip.gif"},
+                        {"type": "empty"},
+                        {"type": "text", "content": "If you cant get the cutscene skip to work you might be jumping to far to the left."}
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "hunt1",
+            "name": "Hunt 1",
+            "image": "levels/hunt1.png"
+        },
+        {
+            "id": "hunt2",
+            "name": "Hunt 2",
+            "image": "levels/hunt2.png"
+        },
+        {
+            "id": "hunt3",
+            "name": "Hunt 3",
+            "image": "levels/hunt3.png"
+        },
+        {
+            "id": "hunt4",
+            "name": "Hunt 4",
+            "image": "levels/hunt4.png"
+        },
+        {
+            "id": "factory",
+            "name": "Factory",
+            "image": "levels/factory.png"
+        },
+        {
+            "id": "hamletStart",
+            "name": "Hamlet Start",
+            "image": "levels/hamletStart.png"
+        },
+        {
+            "id": "hamletMine",
+            "name": "Hamlet Mine",
+            "image": "levels/hamletMine.png"
+        },
+        {
+            "id": "hamletEnd",
+            "name": "Hamlet End",
+            "image": "levels/hamletEnd.png"
+        },
+        {
+            "id": "prisonSteed",
+            "name": "Prison Steed",
+            "image": "levels/prisonSteed.png"
+        },
+        {
+            "id": "prisonPib",
+            "name": "Prison PIB",
+            "image": "levels/prisonPib.png"
+        },
+        {
+            "id": "prisonShrek",
+            "name": "Prison Shrek",
+            "image": "levels/prisonShrek.png"
+        },
+        {
+            "id": "castleSiege",
+            "name": "Castle Siege",
+            "image": "levels/castleSiege.png"
+        },
+        {
+            "id": "fgmBattle",
+            "name": "FGM Battle",
+            "image": "levels/fgmBattle.png"
         }
-    },
+    ],
     "runs": [
         {
             "id": "run1",
             "url": "https://www.youtube.com/watch?v=GOuCU6N34XU",
             "description": "Any% by Michiocre (21:53.647)",
-            "timeStamps": [{ "time": 4, "link": { "url": "#Test", "text": "Link" }, "text": "This is a test" }]
+            "timeStamps": [
+                {
+                    "time": 4,
+                    "link": { "url": "#Test", "text": "Link" },
+                    "text": "This is a test"
+                }
+            ]
         },
         {
             "id": "run2",

@@ -1,12 +1,12 @@
 <template>
     <header>
-        <h2>Shrek 2 Speedrunning Guide</h2>
+        <RouterLink to="/"><h2>Shrek 2 Speedrunning Guide</h2></RouterLink>
         <nav>
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/setup">Setup</RouterLink>
-            <RouterLink to="/levels/basics">Basics</RouterLink>
-            <RouterLink to="/levels">Levels</RouterLink>
-            <RouterLink to="/runs">Full Runs</RouterLink>
+            <RouterLink class="mainLink" to="/">Home</RouterLink>
+            <RouterLink class="mainLink" to="/setup">Setup</RouterLink>
+            <RouterLink class="mainLink" to="/basics">Basics</RouterLink>
+            <RouterLink class="mainLink" to="/levels">Levels</RouterLink>
+            <RouterLink class="mainLink" to="/runs">Full Runs</RouterLink>
         </nav>
     </header>
 
@@ -14,20 +14,15 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <style>
-@import '@/assets/base.css';
-
-#app,
-body {
-    padding-bottom: 5rem;
-}
+@import "@/assets/base.css";
 
 header {
     background: var(--vt-c-black);
-    position: sticky;
+    position: fixed;
     z-index: 10000;
     top: 0px;
     width: 100%;
@@ -44,28 +39,29 @@ nav {
     justify-content: space-between;
 }
 
-h2 {
+nav a,
+.green {
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+nav .mainLink:hover {
+    text-decoration: underline;
+}
+
+nav .router-link-active {
+    font-size: 120%;
+}
+
+header > a {
     display: inline;
+    color: var(--color-text);
+    text-decoration: none;
 }
 
 .main {
     width: 70%;
-    margin: 1rem 15%;
-}
-
-a,
-.green {
-    text-decoration: none;
-    color: hsla(160, 100%, 37%, 1);
-    transition: 0.4s;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.router-link-active {
-    font-weight: bold;
+    margin: 5rem 15%;
 }
 
 .pageHeading {

@@ -1,15 +1,24 @@
 <template>
     <div class="wrapper">
-        <YoutubeVue3 class="youtubePlayer" :ref="content.id" autoplay="0" :videoid="videoId" :width="vw" :height="vh" />
+        <YoutubeVue3
+            class="youtubePlayer"
+            :ref="content.id"
+            autoplay="0"
+            :videoid="videoId"
+            :width="vw"
+            :height="vh"
+        />
         <div class="activeText">
-            <Router-Link v-if="activeLink" :to="activeLink.url">{{ activeLink.text }}</Router-Link>
+            <Router-Link v-if="activeLink" :to="activeLink.url">{{
+                activeLink.text
+            }}</Router-Link>
             {{ activeText }}
         </div>
     </div>
 </template>
 
 <script>
-import { YoutubeVue3 } from 'youtube-vue3';
+import { YoutubeVue3 } from "youtube-vue3";
 export default {
     components: {
         YoutubeVue3,
@@ -19,13 +28,15 @@ export default {
     },
     data() {
         return {
-            activeText: '',
+            activeText: "",
             activeLink: null,
         };
     },
     methods: {
         async updateText() {
-            let time = await this.$refs[this.content.id]?.player.getCurrentTime();
+            let time = await this.$refs[
+                this.content.id
+            ]?.player.getCurrentTime();
             let timeStamp = null;
             if (time) {
                 for (const entry of this.content.timeStamps) {
@@ -51,10 +62,13 @@ export default {
     },
     computed: {
         videoId() {
-            return this.content.url.split('v=')[1];
+            return this.content.url.split("v=")[1];
         },
         vw() {
-            let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            let vw = Math.max(
+                document.documentElement.clientWidth || 0,
+                window.innerWidth || 0
+            );
             return vw / 2 - 30;
         },
         vh() {

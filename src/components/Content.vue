@@ -2,9 +2,17 @@
     <div :id="content.id" class="wrapper">
         <h1 class="green">{{ content.name }}</h1>
         <div class="container">
-            <div class="content" v-for="entry of content.structure" v-bind:key="entry.id">
+            <div
+                class="content"
+                v-for="entry of content.structure"
+                v-bind:key="entry.id"
+            >
                 <span v-if="entry.type == 'text'">{{ entry.content }}</span>
-                <img :src="imgSrc(entry.content)" v-if="entry.type == 'image' || entry.type == 'gif'" />
+                <img
+                    :src="imgSrc(entry.content)"
+                    v-if="entry.type == 'image' || entry.type == 'gif'"
+                />
+                <div v-if="entry.type == 'empty'"></div>
             </div>
         </div>
     </div>
@@ -14,7 +22,7 @@
 export default {
     methods: {
         imgSrc(name) {
-            return new URL(`../assets/content/${name}`, import.meta.url).href;
+            return new URL(`../assets/${name}`, import.meta.url).href;
         },
     },
     props: {
@@ -43,5 +51,13 @@ img {
     border-radius: 1em;
     padding: 1em;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+    
+    scroll-margin-top: 80px;
+}
+.content {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

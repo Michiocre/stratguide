@@ -1,29 +1,50 @@
 <template>
     <main>
         <h1 class="pageHeading">Technique of the day:</h1>
-        <RouterLink :to="'/levels/' + randomContent[0] + '#' + randomContent[1].id">
+        <RouterLink :to="randomContent[0]">
             <Content :content="randomContent[1]" />
         </RouterLink>
     </main>
 </template>
 
 <script>
-import Content from '@/components/Content.vue';
+import Content from "@/components/Content.vue";
+import seedrandom from "seedrandom";
 export default {
     components: {
         Content,
     },
     computed: {
         randomContent() {
-            let levelKeys = Object.keys(this.allContent.levels);
-            let levelIndex = (new Date().getDate() * 17) % levelKeys.length;
-            let levelRand = levelKeys[levelIndex];
+            let allMoves = [];
 
-            let moveKeys = Object.keys(this.allContent.levels[levelRand].moves);
-            let moveIndex = (new Date().getDate() * 27) % moveKeys.length;
-            let moveRand = moveKeys[moveIndex];
+            for (let key of Object.keys(this.allContent)) {
+                let part = this.allContent[key];
+                if (typeof part != "object") continue;
+                if (Array.isArray(part)) {
+                    for (let level of part) {
+                        if (level.moves?.length > 0) {
+                            for (let move of level.moves) {
+                                allMoves.push([
+                                    `/${key}/${level.id}#${move.id}`,
+                                    move,
+                                ]);
+                            }
+                        }
+                    }
+                }
 
-            return [levelRand, this.allContent.levels[levelRand].moves[moveRand]];
+                if (part.moves?.length > 0) {
+                    for (let move of part.moves) {
+                        allMoves.push([`/${key}#${move.id}`, move]);
+                    }
+                }
+            }
+
+            let rand = Math.floor(
+                seedrandom(new Date().getDate())() * allMoves.length
+            );
+            return allMoves[rand];
         },
     },
 };
